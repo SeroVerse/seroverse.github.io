@@ -1,10 +1,10 @@
 [project]
-site_name = "Kaptive Docs"
-site_description = "The tool for _in silico_ serotyping"
-site_url = "https://klebgenomics.github.io/Kaptive"
+site_name = "SeroVerse"
+site_description = "Landing page _in silico_ serotyping"
+site_url = "https://seroverse.github.io"
 site_author = "Tom Stanton"
-repo_url = "https://github.com/klebgenomics/Kaptive"
-repo_name = "klebgenomics/Kaptive"
+repo_url = "https://github.com/SeroVerse/seroverse.github.io"
+repo_name = "SeroVerse/seroverse.github.io"
 edit_uri = "edit/master/docs/"
 copyright = """
 Copyright &copy; 2026 <a href="https://tomdstanton.com" target="_blank">Tom Stanton</a>
@@ -14,84 +14,25 @@ site_dir = "site"
 watch = ["src"]
 nav = [
     { Home = "index.md" },
-    { Databases = [
-        "db/overview.md",
-        "db/curation.md",
-        "db/packaging.md",
-    ] },
-    { Serotyping = [
-        "serotyping/method.md",
-        "serotyping/outputs.md",
-        "serotyping/results.md",
-    ] },
-    { "CLI Usage" = [
-        "cli/db.md",
-        "cli/serotyping.md",
-        "cli/convert.md",
-    ] },
-    { Tutorials = [
-        "tutorials/locus_comparison.md",
-    ] },
-    
-    { "API Reference" = [
-        "reference/index.md",
-        { core = [
-            "reference/core/index.md",
-            "reference/core/alignment.md",
-            "reference/core/alphabet.md",
-            "reference/core/collections.md",
-            "reference/core/genome.md",
-            "reference/core/interval.md",
-            "reference/core/kernels.md",
-            "reference/core/kmers.md",
-            "reference/core/pairwise.md",
-            "reference/core/seq.md",
-        ] },
-        { db = [
-            "reference/db/index.md",
-            "reference/db/cli.md",
-            "reference/db/core.md",
-            "reference/db/manager.md",
-            "reference/db/models.md",
-        ] },
-        { serotyping = [
-            "reference/serotyping/index.md",
-            "reference/serotyping/cli.md",
-            "reference/serotyping/core.md",
-            "reference/serotyping/io.md",
-            "reference/serotyping/models.md",
-        ] }
-    ] },
-
-    { Development = [
-        "conduct.md",
-        "contributing.md",
-        "releases.md",
-      ] },
 ]
 plugins = [
     "search",
     { reading-time = { words_per_minute = 200 } },
     "include-markdown",
     "offline",
-    { mkdocstrings = { handlers = { python = { paths = ["src"], inventories = ["https://docs.python.org/3/objects.inv"], options = { docstring_style = "google", docstring_section_style = "list", relative_crossrefs = true, scoped_crossrefs = true, signature_crossrefs = true, unwrap_annotated = true, filters = "public", inherited_members = true, summary = true, heading_level = 2, parameter_headings = true, type_parameter_headings = true, show_root_heading = false, show_root_full_path = false, show_symbol_type_heading = true, show_symbol_type_toc = true, line_length = 88, merge_init_into_class = true, separate_signature = true, show_signature_annotations = true, show_signature_type_parameters = true, backlinks = "tree", show_bases = false, show_inheritance_diagram = true, docstring_options = { ignore_init_summary = true } } } } } }
-]
-extra_javascript = [
-    "javascripts/mathjax.js",
-    "https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js",
 ]
 
 [project.theme]
-name = "material"
-logo = "assets/logo.png"
-favicon = "assets/favicon.png"
+# name = "material"
+# logo = "assets/logo.png"
+# favicon = "assets/favicon.png"
 custom_dir = "docs/overrides"
 language = "en"
 icon.repo = "fontawesome/brands/github"
 palette = [
     { media = "(prefers-color-scheme)", toggle = { icon = "lucide/sun-moon", name = "Switch to light mode" } },
-    { media = "(prefers-color-scheme: light)", scheme = "default", toggle = { icon = "lucide/sun", name = "Switch to dark mode" }, primary = "purple", accent = "purple" },
-    { media = "(prefers-color-scheme: dark)", scheme = "slate", toggle = { icon = "lucide/moon", name = "Switch to system preference" }, primary = "purple", accent = "purple" }
+    { media = "(prefers-color-scheme: light)", scheme = "default", toggle = { icon = "lucide/sun", name = "Switch to dark mode" } },
+    { media = "(prefers-color-scheme: dark)", scheme = "slate", toggle = { icon = "lucide/moon", name = "Switch to system preference" } }
 ]
 features = [
     "announce.dismiss",
@@ -106,8 +47,8 @@ features = [
     "navigation.tabs",
     "navigation.tabs.sticky",
     "navigation.tracking",
-    # "navigation.sections",
-    # "navigation.expand",
+    "navigation.sections",
+    "navigation.expand",
     "navigation.instant",
     "navigation.instant.progress",
     "navigation.path",
@@ -118,22 +59,15 @@ features = [
     # "toc.integrate",
 ]
 
-[project.extra]
-social = [
-    { icon = "lucide/mail", link = "mailto:kaptive.typing@gmail.com" },
-    { icon = "simple/pypi", link = "https://pypi.org/project/kaptive" },
-    { icon = "simple/anaconda", link = "https://anaconda.org/bioconda/kaptive" },
-    { icon = "lucide/book-open-text", link = "https://klebgenomics.github.io/Kaptive" },
-    { icon = "lucide/globe", link = "https://kaptive-web.erc.monash.edu/" },
-]
-generator = false
-alternate = [
-    { name = "English", link = "/Kaptive/", lang = "en" },
-    { name = "Español", link = "/Kaptive/es/", lang = "es" },
-    { name = "Français", link = "/Kaptive/fr/", lang = "fr" },
-    { name = "中文", link = "/Kaptive/zh/", lang = "zh" },
-    { name = "日本語", link = "/Kaptive/ja/", lang = "ja" },
-]
+# [project.extra]
+# social = [
+#     { icon = "lucide/mail", link = "mailto:kaptive.typing@gmail.com" },
+#     { icon = "simple/pypi", link = "https://pypi.org/project/kaptive" },
+#     { icon = "simple/anaconda", link = "https://anaconda.org/bioconda/kaptive" },
+#     { icon = "lucide/book-open-text", link = "https://klebgenomics.github.io/Kaptive" },
+#     { icon = "lucide/globe", link = "https://kaptive-web.erc.monash.edu/" },
+# ]
+# generator = false
 
 [project.markdown_extensions]
 admonition = {}
