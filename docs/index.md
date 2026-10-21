@@ -58,7 +58,10 @@ Select a pillar below to explore its documentation, interactive benchmark slide 
   <article class="sv-pillar-card sv-pillar-card--serogen">
     <div>
       <div class="sv-pillar-header">
-        <h3 class="sv-pillar-title" markdown="span">:lucide-dna: SeroGen</h3>
+        <h3 class="sv-pillar-title">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-dna" viewBox="0 0 24 24" aria-hidden="true"><path d="m10 16 1.5 1.5M14 8l-1.5-1.5M15 2c-1.798 1.998-2.518 3.995-2.807 5.993M16.5 10.5l1 1M17 6l-2.891-2.891M2 15c6.667-6 13.333 0 20-6M20 9l.891.891M3.109 14.109 4 15M6.5 12.5l1 1M7 18l2.891 2.891M9 22c1.798-1.998 2.518-3.995 2.807-5.993"/></svg>
+          <span>SeroGen</span>
+        </h3>
         <span class="sv-pillar-badge">1 · Genomics</span>
       </div>
       <p class="sv-pillar-desc">
@@ -81,7 +84,10 @@ Select a pillar below to explore its documentation, interactive benchmark slide 
   <article class="sv-pillar-card sv-pillar-card--kbank">
     <div>
       <div class="sv-pillar-header">
-        <h3 class="sv-pillar-title" markdown="span">:lucide-hexagon: KBank</h3>
+        <h3 class="sv-pillar-title">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-hexagon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16"/></svg>
+          <span>KBank</span>
+        </h3>
         <span class="sv-pillar-badge">2 · Glycomics</span>
       </div>
       <p class="sv-pillar-desc">
@@ -104,7 +110,10 @@ Select a pillar below to explore its documentation, interactive benchmark slide 
   <article class="sv-pillar-card sv-pillar-card--seroepi">
     <div>
       <div class="sv-pillar-header">
-        <h3 class="sv-pillar-title" markdown="span">:lucide-chart-network: SeroEpi</h3>
+        <h3 class="sv-pillar-title">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-chart-network" viewBox="0 0 24 24" aria-hidden="true"><path d="m13.11 7.664 1.78 2.672M14.162 12.788l-3.324 1.424M20 4l-6.06 1.515M3 3v16a2 2 0 0 0 2 2h16"/><circle cx="12" cy="6" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="9" cy="15" r="2"/></svg>
+          <span>SeroEpi</span>
+        </h3>
         <span class="sv-pillar-badge">3 · Epidemiology</span>
       </div>
       <p class="sv-pillar-desc">

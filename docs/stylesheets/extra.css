@@ -412,13 +412,25 @@
 }
 
 .sv-pillar-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   font-size: 1.22rem;
   font-weight: 800;
   margin: 0 !important;
   letter-spacing: -0.02em;
 }
 
+.sv-pillar-title svg {
+  width: 1.15em;
+  height: 1.15em;
+  flex-shrink: 0;
+  color: var(--pillar-accent, var(--sv-accent));
+}
+
 .sv-pillar-badge {
+  white-space: nowrap;
+  flex-shrink: 0;
   font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;

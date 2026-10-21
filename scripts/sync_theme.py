@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Synchronize canonical SeroVerse Zensical theme components to sibling repositories.
 
-Copies `docs/stylesheets/extra.css`, `docs/overrides/main.html`, and the
-pillar-specific `docs/assets/favicon.svg` from `seroverse.github.io` into
+Copies `docs/stylesheets/extra.css`, `docs/overrides/main.html`,
+`docs/overrides/partials/comments.html`, `scripts/fetch_announcement.py`, and
+the pillar-specific `docs/assets/favicon.svg` from `seroverse.github.io` into
 `../SeroGen`, `../KBank`, and `../SeroEpi`.
 """
 
@@ -16,6 +17,8 @@ ROOT = Path(__file__).resolve().parent.parent
 CANONICAL_FILES = (
     Path("docs/stylesheets/extra.css"),
     Path("docs/overrides/main.html"),
+    Path("docs/overrides/partials/comments.html"),
+    Path("scripts/fetch_announcement.py"),
 )
 PILLAR_FAVICONS = {
     "serogen": Path("docs/assets/favicon-serogen.svg"),
