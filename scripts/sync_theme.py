@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Synchronize canonical SeroVerse Zensical theme components to sibling repositories.
 
-Copies `docs/stylesheets/extra.css` and `docs/overrides/main.html` from
-`seroverse.github.io` into `../SeroGen`, `../KBank`, and `../SeroEpi`.
+Copies `docs/stylesheets/extra.css`, `docs/overrides/main.html`, and the
+pillar-specific `docs/assets/favicon.svg` from `seroverse.github.io` into
+`../SeroGen`, `../KBank`, and `../SeroEpi`.
 """
 
 from __future__ import annotations
@@ -16,11 +17,30 @@ CANONICAL_FILES = (
     Path("docs/stylesheets/extra.css"),
     Path("docs/overrides/main.html"),
 )
+PILLAR_FAVICONS = {
+    "serogen": Path("docs/assets/favicon-serogen.svg"),
+    "kbank": Path("docs/assets/favicon-kbank.svg"),
+    "seroepi": Path("docs/assets/favicon-seroepi.svg"),
+}
 DEFAULT_TARGETS = (
     ROOT.parent / "SeroGen",
     ROOT.parent / "KBank",
     ROOT.parent / "SeroEpi",
 )
+
+
+def _sync_pair(src: Path, dst: Path, label: str, *, check_only: bool) -> str:
+    src_bytes = src.read_bytes()
+    dst_bytes = dst.read_bytes() if dst.exists() else None
+
+    if dst_bytes == src_bytes:
+        return f"[OK]   {label} is up to date"
+    if check_only:
+        return f"[DIFF] {label} differs from canonical"
+
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(src, dst)
+    return f"[SYNC] {label} updated"
 
 
 def sync_target(target_repo: Path, *, check_only: bool = False) -> list[str]:
@@ -33,19 +53,17 @@ def sync_target(target_repo: Path, *, check_only: bool = False) -> list[str]:
     for rel_path in CANONICAL_FILES:
         src = ROOT / rel_path
         dst = target_repo / rel_path
-        src_bytes = src.read_bytes()
-        dst_bytes = dst.read_bytes() if dst.exists() else None
+        messages.append(_sync_pair(src, dst, f"{target_repo.name}/{rel_path}", check_only=check_only))
 
-        if dst_bytes == src_bytes:
-            messages.append(f"[OK]   {target_repo.name}/{rel_path} is up to date")
-            continue
-
-        if check_only:
-            messages.append(f"[DIFF] {target_repo.name}/{rel_path} differs from canonical")
-        else:
-            dst.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(src, dst)
-            messages.append(f"[SYNC] {target_repo.name}/{rel_path} updated")
+    pillar_key = target_repo.name.lower()
+    favicon_src_rel = PILLAR_FAVICONS.get(pillar_key)
+    if favicon_src_rel is not None:
+        src = ROOT / favicon_src_rel
+        dst = target_repo / "docs/assets/favicon.svg"
+        if src.exists():
+            messages.append(
+                _sync_pair(src, dst, f"{target_repo.name}/docs/assets/favicon.svg", check_only=check_only)
+            )
 
     return messages
 
