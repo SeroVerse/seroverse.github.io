@@ -1,88 +1,141 @@
 [project]
+site_url = "https://seroverse.github.io/"
 site_name = "SeroVerse"
-site_description = "Landing page _in silico_ serotyping"
-site_url = "https://seroverse.github.io"
+site_description = "Unified computational ecosystem for bacterial surface polysaccharide genomics, neuro-symbolic glycomics, and Bayesian sero-epidemiology"
 site_author = "Tom Stanton"
+copyright = """
+Copyright &copy; 2026 <a href="https://tomdstanton.com" target="_blank" rel="noopener">Tom Stanton</a> — SeroVerse
+"""
+
 repo_url = "https://github.com/SeroVerse/seroverse.github.io"
 repo_name = "SeroVerse/seroverse.github.io"
-edit_uri = "edit/master/docs/"
-copyright = """
-Copyright &copy; 2026 <a href="https://tomdstanton.com" target="_blank">Tom Stanton</a>
-"""
+edit_uri = "edit/main/docs/"
+
 docs_dir = "docs"
 site_dir = "site"
-watch = ["src"]
+
 nav = [
-    { Home = "index.md" },
+  { "SeroVerse Hub" = "index.md" },
 ]
-plugins = [
-    "search",
-    { reading-time = { words_per_minute = 200 } },
-    "include-markdown",
-    "offline",
-]
+
+extra_css = ["stylesheets/extra.css"]
 
 [project.theme]
-# name = "material"
-# logo = "assets/logo.png"
-# favicon = "assets/favicon.png"
 custom_dir = "docs/overrides"
 language = "en"
-icon.repo = "fontawesome/brands/github"
-palette = [
-    { media = "(prefers-color-scheme)", toggle = { icon = "lucide/sun-moon", name = "Switch to light mode" } },
-    { media = "(prefers-color-scheme: light)", scheme = "default", toggle = { icon = "lucide/sun", name = "Switch to dark mode" } },
-    { media = "(prefers-color-scheme: dark)", scheme = "slate", toggle = { icon = "lucide/moon", name = "Switch to system preference" } }
-]
 features = [
-    "announce.dismiss",
-    "content.action.edit",
-    "content.code.annotate",
-    "content.code.copy",
-    "content.code.select",
-    "content.footnote.tooltips",
-    "header.autohide",
-    "navigation.top",
-    "navigation.footer",
-    "navigation.tabs",
-    "navigation.tabs.sticky",
-    "navigation.tracking",
-    "navigation.sections",
-    "navigation.expand",
-    "navigation.instant",
-    "navigation.instant.progress",
-    "navigation.path",
-    "search.suggest",
-    "search.highlight",
-    "search.share",
-    "toc.follow",
-    # "toc.integrate",
+  "announce.dismiss",
+  "content.action.edit",
+  "content.action.view",
+  "content.code.annotate",
+  "content.code.copy",
+  "content.code.select",
+  "content.footnote.tooltips",
+  "content.tabs.link",
+  "content.tooltips",
+  "navigation.footer",
+  "navigation.instant",
+  "navigation.instant.prefetch",
+  "navigation.instant.progress",
+  "navigation.sections",
+  "navigation.top",
+  "navigation.tracking",
+  "search.highlight",
+  "toc.follow",
 ]
 
-# [project.extra]
-# social = [
-#     { icon = "lucide/mail", link = "mailto:kaptive.typing@gmail.com" },
-#     { icon = "simple/pypi", link = "https://pypi.org/project/kaptive" },
-#     { icon = "simple/anaconda", link = "https://anaconda.org/bioconda/kaptive" },
-#     { icon = "lucide/book-open-text", link = "https://klebgenomics.github.io/Kaptive" },
-#     { icon = "lucide/globe", link = "https://kaptive-web.erc.monash.edu/" },
-# ]
-# generator = false
+[project.theme.icon]
+logo = "lucide/orbit"
+repo = "fontawesome/brands/github"
+
+[project.theme.font]
+text = "Inter"
+code = "JetBrains Mono"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme)"
+toggle.icon = "lucide/sun-moon"
+toggle.name = "Switch to light mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+primary = "cyan"
+accent = "indigo"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+primary = "cyan"
+accent = "indigo"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to system preference"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/SeroVerse"
+name = "SeroVerse on GitHub"
+
+[[project.extra.social]]
+icon = "lucide/globe"
+link = "https://tomdstanton.com"
+name = "Tom Stanton"
+
+[[project.extra.social]]
+icon = "lucide/app-window"
+link = "https://seroverse-seroepi.hf.space"
+name = "SeroEpi Interactive Web App"
+
+[project.plugins.search]
+enabled = true
+
+[project.plugins.autorefs]
+enabled = true
+
+[project.plugins.gh-admonitions]
+enabled = true
+
+[project.plugins.glightbox]
+enabled = true
+
+[project.plugins.llmstxt]
+enabled = true
+markdown_description = "SeroVerse: Unified computational ecosystem for bacterial surface polysaccharide genomics (SeroGen), neuro-symbolic glycomics and biosynthetic pathway alignment (KBank), and Bayesian sero-epidemiological modelling and vaccine formulation (SeroEpi)."
+full_output = "llms-full.txt"
+
+[project.plugins.llmstxt.sections]
+"SeroVerse Ecosystem" = [
+  { "index.md" = "Overview of SeroGen, KBank, and SeroEpi, end-to-end architecture, quickstarts, and benchmark links" },
+]
 
 [project.markdown_extensions]
+abbr = {}
 admonition = {}
 attr_list = {}
+def_list = {}
 footnotes = {}
 md_in_html = {}
-toc = { permalink = true, title = "On this page" }
-
-"pymdownx.arithmatex" = { generic = true }
-"pymdownx.details" = {}
-"pymdownx.emoji" = { emoji_index = "zensical.extensions.emoji.twemoji", emoji_generator = "zensical.extensions.emoji.to_svg" }
-"pymdownx.highlight" = { anchor_linenums = true, use_pygments = true, linenums = true, auto_title = true }
-"pymdownx.inlinehilite" = {}
-"pymdownx.snippets" = { base_path = ["."] }
-"pymdownx.superfences" = { custom_fences = [ { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" } ] }
-"pymdownx.tabbed" = { alternate_style = true }
-
-"zensical.extensions.glightbox" = {}
+toc.permalink = true
+pymdownx.arithmatex.generic = true
+pymdownx.betterem = {}
+pymdownx.caret = {}
+pymdownx.details = {}
+pymdownx.emoji.emoji_generator = "zensical.extensions.emoji.to_svg"
+pymdownx.emoji.emoji_index = "zensical.extensions.emoji.twemoji"
+pymdownx.highlight.anchor_linenums = true
+pymdownx.highlight.line_spans = "__span"
+pymdownx.highlight.pygments_lang_class = true
+pymdownx.inlinehilite = {}
+pymdownx.keys = {}
+pymdownx.magiclink = {}
+pymdownx.mark = {}
+pymdownx.smartsymbols = {}
+pymdownx.superfences.custom_fences = [
+  { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" },
+]
+pymdownx.tabbed.alternate_style = true
+pymdownx.tabbed.combine_header_slug = true
+pymdownx.tasklist.custom_checkbox = true
+pymdownx.tilde = {}
