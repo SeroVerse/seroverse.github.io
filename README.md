@@ -2,7 +2,7 @@
 
 Main landing portal and canonical Zensical theme source of truth for the **SeroVerse** computational ecosystem:
 
-- **[SeroVerse Hub](https://seroverse.github.io/)** — Ecosystem overview, architecture, and unified quickstarts
+- **[SeroVerse Home](https://seroverse.github.io/)** — Ecosystem overview, architecture, and unified quickstarts
 - **[SeroGen](https://seroverse.github.io/SeroGen/)** — Zero-copy SoA genomic engine, single-pass bacterial & prophage ORF caller, 1D-CNN role classifier, and ACP-DP locus segmenter
 - **[KBank](https://seroverse.github.io/KBank/)** — Neuro-symbolic bacterial glycan database, bipartite gene-to-glycan aligner, and Relational MPNN structure predictor
 - **[SeroEpi](https://seroverse.github.io/SeroEpi/)** — Bayesian hierarchical sero-epidemiological modelling, LOSO-validated vaccine formulation, and interactive PyShiny web application

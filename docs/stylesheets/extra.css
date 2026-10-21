@@ -5,7 +5,7 @@
    ========================================================================== */
 
 :root {
-  /* Default / SeroVerse Hub Full-Spectrum Palette */
+  /* Default / SeroVerse Home Full-Spectrum Palette */
   --sv-gradient: linear-gradient(135deg, #06b6d4 0%, #2563eb 52%, #7c3aed 100%);
   --sv-glow: rgba(14, 165, 233, 0.16);
   --sv-border: rgba(14, 165, 233, 0.26);
