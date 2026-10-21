@@ -116,7 +116,8 @@
   width: 0.95rem;
   height: 0.95rem;
   color: #38bdf8;
-  fill: currentColor;
+  fill: none;
+  stroke: currentColor;
 }
 
 .sv-eco-tag {
@@ -744,7 +745,8 @@
   width: 1.1rem;
   height: 1.1rem;
   color: #38bdf8;
-  fill: currentColor;
+  fill: none;
+  stroke: currentColor;
 }
 
 .sv-footer-tagline {

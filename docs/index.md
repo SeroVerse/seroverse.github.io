@@ -25,7 +25,7 @@ hide:
 
 <div class="sv-hero-actions" markdown>
   <a href="#the-three-pillars" class="sv-btn sv-btn--primary" markdown="span">:lucide-layers: Explore the Ecosystem</a>
-  <a href="https://seroverse-seroepi.hf.space" target="_blank" rel="noopener" class="sv-btn sv-btn--secondary" markdown="span">:lucide-app-window: Launch SeroEpi Live App ↗</a>
+  <a href="https://tomdstanton-seroepi.share.connect.posit.cloud" target="_blank" rel="noopener" class="sv-btn sv-btn--secondary" markdown="span">:lucide-app-window: Launch SeroEpi Live App ↗</a>
   <a href="https://github.com/SeroVerse" target="_blank" rel="noopener" class="sv-btn sv-btn--secondary" markdown="span">:fontawesome-brands-github: GitHub Organization ↗</a>
 </div>
 
@@ -121,7 +121,7 @@ Select a pillar below to explore its documentation, interactive benchmark slide 
     </div>
     <div class="sv-pillar-links">
       <a href="https://seroverse.github.io/SeroEpi/" class="sv-pillar-link">Docs &amp; Guide</a>
-      <a href="https://seroverse-seroepi.hf.space" target="_blank" rel="noopener" class="sv-pillar-link sv-pillar-link--ghost">Live Web App ↗</a>
+      <a href="https://tomdstanton-seroepi.share.connect.posit.cloud" target="_blank" rel="noopener" class="sv-pillar-link sv-pillar-link--ghost">Live Web App ↗</a>
       <a href="https://seroverse.github.io/SeroEpi/app/" class="sv-pillar-link sv-pillar-link--ghost">Embedded App</a>
       <a href="https://github.com/SeroVerse/SeroEpi" target="_blank" rel="noopener" class="sv-pillar-link sv-pillar-link--ghost">GitHub ↗</a>
     </div>
@@ -292,7 +292,7 @@ flowchart LR
 | **SeroGen** | [Multi-Scale 1D-CNN Role Classifier](https://seroverse.github.io/SeroGen/notebooks/gene-classifier/) | Optuna TPE hyperparameter tuning and confusion matrices across 30 polysaccharide biosynthesis, transport, and MGE roles (**91.4% Macro F1**). |
 | **SeroGen** | [*S. pneumoniae* 98-Serotype CPS Benchmark](https://seroverse.github.io/SeroGen/notebooks/spneumo-serotyping/) | Whole-genome serotyping (**100% Top-1 accuracy**), contig-split boundary stitching, LOO novelty detection, and Fruchterman-Reingold synteny networks. |
 | **KBank** | [CSDB Curation & BGC-to-Glycan Alignment](https://seroverse.github.io/KBank/notebooks/) | Curation of **1,514** bacterial surface polysaccharide structures, pan-graph EM glycosyltransferase assignment, and MPNN *de novo* structure recovery (`KL106`, `KL107`). |
-| **SeroEpi** | [Live PyShiny Surveillance & Formulation App ↗](https://seroverse-seroepi.hf.space) | Interactive cohort explorer, compositional antigen target builder, NUTS MCMC / SVI Bayesian prevalence fitting, spatial choropleths, UpSet plots, and vaccine coverage curves. |
+| **SeroEpi** | [Live PyShiny Surveillance & Formulation App ↗](https://tomdstanton-seroepi.share.connect.posit.cloud) | Interactive cohort explorer, compositional antigen target builder, NUTS MCMC / SVI Bayesian prevalence fitting, spatial choropleths, UpSet plots, and vaccine coverage curves. |
 
 ---
 

@@ -88,7 +88,7 @@ name = "Tom Stanton"
 
 [[project.extra.social]]
 icon = "lucide/app-window"
-link = "https://seroverse-seroepi.hf.space"
+link = "https://tomdstanton-seroepi.share.connect.posit.cloud"
 name = "SeroEpi Interactive Web App"
 
 [project.plugins.search]
