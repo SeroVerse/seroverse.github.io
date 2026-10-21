@@ -9,8 +9,6 @@ hide:
 
 <div class="sv-hero" markdown>
 
-<div class="sv-hero-eyebrow" markdown="span">:lucide-orbit: The SeroVerse Computational Suite</div>
-
 # From Genome Assemblies to Glycan Structures & Vaccine Formulations
 
 **SeroVerse** is an end-to-end, high-performance Python ecosystem uniting **bacterial polysaccharide locus genomics (`SeroGen`)**, **neuro-symbolic glycomics and biosynthetic pathway alignment (`KBank`)**, and **hierarchical Bayesian sero-epidemiological modelling (`SeroEpi`)**.
@@ -25,7 +23,6 @@ hide:
 
 <div class="sv-hero-actions" markdown>
   <a href="#the-three-pillars" class="sv-btn sv-btn--primary" markdown="span">:lucide-layers: Explore the Ecosystem</a>
-  <a href="https://tomdstanton-seroepi.share.connect.posit.cloud" target="_blank" rel="noopener" class="sv-btn sv-btn--secondary" markdown="span">:lucide-app-window: Launch SeroEpi Live App ↗</a>
   <a href="https://github.com/SeroVerse" target="_blank" rel="noopener" class="sv-btn sv-btn--secondary" markdown="span">:fontawesome-brands-github: GitHub Organization ↗</a>
 </div>
 
