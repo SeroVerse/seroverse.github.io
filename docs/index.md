@@ -9,38 +9,30 @@ hide:
 
 <div class="sv-hero" markdown>
 
-<div class="sv-hero-eyebrow">
-  :lucide-orbit: The SeroVerse Computational Suite
-</div>
+<div class="sv-hero-eyebrow" markdown="span">:lucide-orbit: The SeroVerse Computational Suite</div>
 
 # From Genome Assemblies to Glycan Structures & Vaccine Formulations
 
 **SeroVerse** is an end-to-end, high-performance Python ecosystem uniting **bacterial polysaccharide locus genomics (`SeroGen`)**, **neuro-symbolic glycomics and biosynthetic pathway alignment (`KBank`)**, and **hierarchical Bayesian sero-epidemiological modelling (`SeroEpi`)**.
 
 <div class="sv-badges">
-  <img src="https://img.shields.io/badge/python-3.12%20%7C%203.14%2B-0284c7?logo=python&logoColor=white" alt="Python 3.12 / 3.14+" />
-  <img src="https://img.shields.io/badge/engine-NumPy%20%2B%20Numba%20SIMD-0d9488" alt="NumPy + Numba SIMD" />
-  <img src="https://img.shields.io/badge/glycomics-MPNN%20%2B%20CSDB%2FIUPAC-10b981" alt="MPNN + CSDB/IUPAC" />
-  <img src="https://img.shields.io/badge/inference-JAX%20%2B%20NumPyro-8b5cf6" alt="JAX + NumPyro" />
-  <img src="https://img.shields.io/badge/license-GPLv3-6366f1" alt="GPLv3 License" />
+  <img class="off-glb" src="https://img.shields.io/badge/python-3.12%20%7C%203.14%2B-0284c7?logo=python&logoColor=white" alt="Python 3.12 / 3.14+" />
+  <img class="off-glb" src="https://img.shields.io/badge/engine-NumPy%20%2B%20Numba%20SIMD-0d9488" alt="NumPy + Numba SIMD" />
+  <img class="off-glb" src="https://img.shields.io/badge/glycomics-MPNN%20%2B%20CSDB%2FIUPAC-10b981" alt="MPNN + CSDB/IUPAC" />
+  <img class="off-glb" src="https://img.shields.io/badge/inference-JAX%20%2B%20NumPyro-8b5cf6" alt="JAX + NumPyro" />
+  <img class="off-glb" src="https://img.shields.io/badge/license-GPLv3-6366f1" alt="GPLv3 License" />
 </div>
 
-<div class="sv-hero-actions">
-  <a href="#the-three-pillars" class="sv-btn sv-btn--primary">
-    :lucide-layers: Explore the Ecosystem
-  </a>
-  <a href="https://seroverse-seroepi.hf.space" target="_blank" rel="noopener" class="sv-btn sv-btn--secondary">
-    :lucide-app-window: Launch SeroEpi Live App ↗
-  </a>
-  <a href="https://github.com/SeroVerse" target="_blank" rel="noopener" class="sv-btn sv-btn--secondary">
-    :fontawesome-brands-github: GitHub Organization ↗
-  </a>
+<div class="sv-hero-actions" markdown>
+  <a href="#the-three-pillars" class="sv-btn sv-btn--primary" markdown="span">:lucide-layers: Explore the Ecosystem</a>
+  <a href="https://seroverse-seroepi.hf.space" target="_blank" rel="noopener" class="sv-btn sv-btn--secondary" markdown="span">:lucide-app-window: Launch SeroEpi Live App ↗</a>
+  <a href="https://github.com/SeroVerse" target="_blank" rel="noopener" class="sv-btn sv-btn--secondary" markdown="span">:fontawesome-brands-github: GitHub Organization ↗</a>
 </div>
 
 <div class="sv-stat-strip">
   <div class="sv-stat-item">
     <span class="sv-stat-value">&gt;65 Mb/s</span>
-    <span class="sv-stat-label">Single-pass bacterial + prophage ORF calling (`~70 ms` per genome)</span>
+    <span class="sv-stat-label">Single-pass bacterial + prophage ORF calling (~70 ms per genome)</span>
   </div>
   <div class="sv-stat-item">
     <span class="sv-stat-value">1,514</span>
@@ -69,7 +61,7 @@ Select a pillar below to explore its documentation, interactive benchmark slide 
   <article class="sv-pillar-card sv-pillar-card--serogen">
     <div>
       <div class="sv-pillar-header">
-        <h3 class="sv-pillar-title">:lucide-dna: SeroGen</h3>
+        <h3 class="sv-pillar-title" markdown="span">:lucide-dna: SeroGen</h3>
         <span class="sv-pillar-badge">1 · Genomics</span>
       </div>
       <p class="sv-pillar-desc">
@@ -92,7 +84,7 @@ Select a pillar below to explore its documentation, interactive benchmark slide 
   <article class="sv-pillar-card sv-pillar-card--kbank">
     <div>
       <div class="sv-pillar-header">
-        <h3 class="sv-pillar-title">:lucide-hexagon: KBank</h3>
+        <h3 class="sv-pillar-title" markdown="span">:lucide-hexagon: KBank</h3>
         <span class="sv-pillar-badge">2 · Glycomics</span>
       </div>
       <p class="sv-pillar-desc">
@@ -115,7 +107,7 @@ Select a pillar below to explore its documentation, interactive benchmark slide 
   <article class="sv-pillar-card sv-pillar-card--seroepi">
     <div>
       <div class="sv-pillar-header">
-        <h3 class="sv-pillar-title">:lucide-chart-network: SeroEpi</h3>
+        <h3 class="sv-pillar-title" markdown="span">:lucide-chart-network: SeroEpi</h3>
         <span class="sv-pillar-badge">3 · Epidemiology</span>
       </div>
       <p class="sv-pillar-desc">
@@ -193,7 +185,7 @@ flowchart LR
 
     `OrfPredictor` combines a 21-state frameshift-tolerant profile-HMM with Shine-Dalgarno RBS scoring and viral gap rescue, achieving **99.7% 3'-stop recall** on bacterial chromosomes and **95.3% recall** across embedded prophages at **>65 Mb/s**.
 
--   :lucide-git-Fork: **Neuro-Symbolic Glycan Biosynthesis (`KBank`)**
+-   :lucide-git-fork: **Neuro-Symbolic Glycan Biosynthesis (`KBank`)**
 
     ---
 
@@ -273,23 +265,21 @@ flowchart LR
 
     ```python
     from seroepi.aggregate import Aggregator
-    from seroepi.estimators.formulation import Formulation
-    from seroepi.estimators.hierarchical import HierarchicalEstimator
+    from seroepi.estimators.formulation import FormulationEstimator
+    from seroepi.estimators.hierarchical import HierarchicalSVIEstimator
     from seroepi.examples import KlebnetNeonatalSepsis
-    from seroepi.plotting.formulation import FormulationPlotter
+    from seroepi.plotting.choropleth import ChoroplethPlotter
 
     # 1. Load the KlebNET Neonatal Sepsis surveillance cohort (981 K. pneumoniae isolates)
-    dataset = KlebnetNeonatalSepsis.ensure()
+    ds = KlebnetNeonatalSepsis.load_built()
 
     # 2. Aggregate K-locus serotype counts stratified by country/site
-    agg = Aggregator(target=dataset.var("k_locus"), strata=[dataset.var("country")]).fit(dataset)
+    agg = Aggregator(target=ds.var("K_locus"), strata=[ds.var("country")]).fit(ds)
 
-    # 3. Fit a 12-valent formulation wrapping a NumPyro Hierarchical Bayesian estimator with LOSO CV
-    estimator = HierarchicalEstimator(engine="SVI", likelihood="beta_binomial")
-    formulation = Formulation(estimator, valency=12, weighting="equal", cv="loso").fit(agg)
-
-    print("Selected 12-valent K-antigen formulation:", formulation.selected_targets_)
-    chart = FormulationPlotter().plot(formulation)
+    # 3. Fit a NumPyro Hierarchical Bayesian estimator & 10-valent vaccine formulation
+    est = HierarchicalSVIEstimator().fit(agg)
+    vaccine = FormulationEstimator(max_valency=10).fit(est)
+    chart = ChoroplethPlotter().plot(est)
     ```
 
 ---

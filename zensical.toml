@@ -54,6 +54,8 @@ code = "JetBrains Mono"
 
 [[project.theme.palette]]
 media = "(prefers-color-scheme)"
+primary = "cyan"
+accent = "indigo"
 toggle.icon = "lucide/sun-moon"
 toggle.name = "Switch to light mode"
 

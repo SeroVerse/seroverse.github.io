@@ -16,3 +16,7 @@ dependencies = [
 docs = [
     "zensical>=0.0.70",
 ]
+
+[tool.uv]
+package = false
+
