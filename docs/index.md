@@ -62,7 +62,7 @@ Select a pillar below to explore its documentation, interactive benchmark slide 
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-dna" viewBox="0 0 24 24" aria-hidden="true"><path d="m10 16 1.5 1.5M14 8l-1.5-1.5M15 2c-1.798 1.998-2.518 3.995-2.807 5.993M16.5 10.5l1 1M17 6l-2.891-2.891M2 15c6.667-6 13.333 0 20-6M20 9l.891.891M3.109 14.109 4 15M6.5 12.5l1 1M7 18l2.891 2.891M9 22c1.798-1.998 2.518-3.995 2.807-5.993"/></svg>
           <span>SeroGen</span>
         </h3>
-        <span class="sv-pillar-badge">1 · Genomics</span>
+        <span class="sv-pillar-badge">Genomics</span>
       </div>
       <p class="sv-pillar-desc">
         Zero-copy Structure-of-Arrays (SoA) genomic engine that decodes bacterial and prophage ORFs, classifies biosynthetic protein roles via a pure NumPy/Numba 1D-CNN, segments capsule and O-antigen loci via exact ACP-DP, and resolves serotypes with bipartite graph alignment.
@@ -88,7 +88,7 @@ Select a pillar below to explore its documentation, interactive benchmark slide 
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-hexagon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16"/></svg>
           <span>KBank</span>
         </h3>
-        <span class="sv-pillar-badge">2 · Glycomics</span>
+        <span class="sv-pillar-badge">Glycomics</span>
       </div>
       <p class="sv-pillar-desc">
         Geno-glycomic database and neuro-symbolic structure predictor bridging <code>SeroGen</code> gene clusters to directed chemical polysaccharide graphs (<code>CSDB</code> / <code>IUPAC</code> / RDKit <code>Mol</code>) via bipartite enzyme-to-linkage alignment and a Relational Message-Passing Neural Network.
@@ -114,7 +114,7 @@ Select a pillar below to explore its documentation, interactive benchmark slide 
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-chart-network" viewBox="0 0 24 24" aria-hidden="true"><path d="m13.11 7.664 1.78 2.672M14.162 12.788l-3.324 1.424M20 4l-6.06 1.515M3 3v16a2 2 0 0 0 2 2h16"/><circle cx="12" cy="6" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="9" cy="15" r="2"/></svg>
           <span>SeroEpi</span>
         </h3>
-        <span class="sv-pillar-badge">3 · Epidemiology</span>
+        <span class="sv-pillar-badge">Epidemiology</span>
       </div>
       <p class="sv-pillar-desc">
         <code>scikit-learn</code> and <code>JAX</code>/<code>NumPyro</code> library for genomic sero-epidemiology. Ingests Pathogenwatch cohorts and UN/World Bank demographics, fits stratified hierarchical Bayesian prevalence models, and optimizes multi-valent vaccine and phage formulations.
