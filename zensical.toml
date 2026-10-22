@@ -1,7 +1,7 @@
 [project]
 site_url = "https://seroverse.github.io/"
 site_name = "SeroVerse"
-site_description = "Unified computational ecosystem for bacterial surface polysaccharide genomics, neuro-symbolic glycomics, and Bayesian sero-epidemiology"
+site_description = "Unified computational ecosystem for bacterial surface polysaccharide genomics, structural glycomics, and Bayesian sero-epidemiology"
 site_author = "Tom Stanton"
 copyright = """
 Copyright &copy; 2026 <a href="https://tomdstanton.com" target="_blank" rel="noopener">Tom Stanton</a> — SeroVerse
@@ -91,7 +91,14 @@ icon = "lucide/app-window"
 link = "https://tomdstanton-seroepi.share.connect.posit.cloud"
 name = "SeroEpi Interactive Web App"
 
+[project.extra.status]
+new = "Recently added"
+deprecated = "Deprecated"
+
 [project.plugins.search]
+enabled = true
+
+[project.plugins.tags]
 enabled = true
 
 [project.plugins.autorefs]
@@ -105,7 +112,7 @@ enabled = true
 
 [project.plugins.llmstxt]
 enabled = true
-markdown_description = "SeroVerse: Unified computational ecosystem for bacterial surface polysaccharide genomics (SeroGen), neuro-symbolic glycomics and biosynthetic pathway alignment (KBank), and Bayesian sero-epidemiological modelling and vaccine formulation (SeroEpi)."
+markdown_description = "SeroVerse: Unified computational ecosystem for bacterial surface polysaccharide genomics (SeroGen), structural glycomics and biosynthetic pathway alignment (KBank), and Bayesian sero-epidemiological modelling and vaccine formulation (SeroEpi)."
 full_output = "llms-full.txt"
 
 [project.plugins.llmstxt.sections]
@@ -135,6 +142,7 @@ pymdownx.keys = {}
 pymdownx.magiclink = {}
 pymdownx.mark = {}
 pymdownx.smartsymbols = {}
+pymdownx.snippets = { base_path = ["."] }
 pymdownx.superfences.custom_fences = [
   { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" },
 ]

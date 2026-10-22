@@ -1,8 +1,15 @@
 ---
-title: SeroVerse — Bacterial Genomics, Glycomics & Sero-Epidemiology
-description: Unified computational ecosystem for in silico serotyping, neuro-symbolic glycan biosynthesis prediction, and Bayesian sero-epidemiology.
+title: SeroVerse
+subtitle: Bacterial Genomics, Glycomics & Sero-Epidemiology
+description: Unified computational ecosystem for bacterial surface polysaccharide locus genomics (SeroGen), structural glycomics (KBank), and Bayesian sero-epidemiology (SeroEpi).
 author: Tom Stanton
 icon: lucide/orbit
+comments: true
+tags:
+  - genomics
+  - glycomics
+  - epidemiology
+  - serotyping
 hide:
   - navigation
 ---
@@ -11,7 +18,7 @@ hide:
 
 # From Genome Assemblies to Glycan Structures & Vaccine Formulations
 
-**SeroVerse** is an end-to-end, high-performance Python ecosystem uniting **bacterial polysaccharide locus genomics (`SeroGen`)**, **neuro-symbolic glycomics and biosynthetic pathway alignment (`KBank`)**, and **hierarchical Bayesian sero-epidemiological modelling (`SeroEpi`)**.
+**SeroVerse** is an end-to-end, high-performance Python ecosystem uniting **bacterial polysaccharide locus genomics (`SeroGen`)**, **structural glycomics and biosynthetic pathway alignment (`KBank`)**, and **hierarchical Bayesian sero-epidemiological modelling (`SeroEpi`)**.
 
 <div class="sv-badges">
   <img class="off-glb" src="https://img.shields.io/badge/python-3.12%20%7C%203.14%2B-0284c7?logo=python&logoColor=white" alt="Python 3.12 / 3.14+" />
@@ -32,7 +39,7 @@ hide:
     <span class="sv-stat-label">Single-pass bacterial + prophage ORF calling (~70 ms per genome)</span>
   </div>
   <div class="sv-stat-item">
-    <span class="sv-stat-value">1,514</span>
+    <span class="sv-stat-value">1,530</span>
     <span class="sv-stat-label">Curated bacterial glycan graphs paired with biosynthetic gene clusters</span>
   </div>
   <div class="sv-stat-item">
@@ -91,10 +98,10 @@ Select a pillar below to explore its documentation, interactive benchmark slide 
         <span class="sv-pillar-badge">Glycomics</span>
       </div>
       <p class="sv-pillar-desc">
-        Geno-glycomic database and neuro-symbolic structure predictor bridging <code>SeroGen</code> gene clusters to directed chemical polysaccharide graphs (<code>CSDB</code> / <code>IUPAC</code> / RDKit <code>Mol</code>) via bipartite enzyme-to-linkage alignment and a Relational Message-Passing Neural Network.
+        Geno-glycomic database and polysaccharide structure predictor bridging <code>SeroGen</code> gene clusters to directed chemical polysaccharide graphs (<code>CSDB</code> / <code>IUPAC</code> / <code>KEGG KCF</code>) via bipartite enzyme-to-linkage alignment and a Relational Message-Passing Neural Network.
       </p>
       <div class="sv-pillar-metrics">
-        <span class="sv-metric-pill">1,514 Locus–Glycan Pairs</span>
+        <span class="sv-metric-pill">1,530 Locus–Glycan Pairs</span>
         <span class="sv-metric-pill">&gt;92% Monosaccharide F1</span>
         <span class="sv-metric-pill">Bipartite GT-Linkage EM</span>
       </div>
@@ -152,10 +159,10 @@ flowchart LR
         FA --> ORF --> CNN --> SEG
     end
 
-    subgraph KB["<b>2. KBank (Neuro-Symbolic Glycomics)</b>"]
+    subgraph KB["<b>2. KBank (Structural Glycomics)</b>"]
         direction TB
-        DB["<b>Curated Glycan-Locus DB</b><br/><i>1,514 CSDB / IUPAC CSR Graphs</i>"]
-        ALN["<b>BiosyntheticAligner</b><br/><i>Pan-Graph EM Enzyme-to-Linkage</i>"]
+        DB["<b>Curated Glycan-Locus DB</b><br/><i>1,530 CSDB / IUPAC CSR Graphs</i>"]
+        ALN["<b>BiosyntheticAssigner</b><br/><i>Pan-Graph EM Enzyme-to-Linkage</i>"]
         MPNN["<b>GlycanPredictor (MPNN)</b><br/><i>Arborescence De Novo Structure</i>"]
         DB --> ALN --> MPNN
     end
@@ -191,17 +198,17 @@ flowchart LR
 
     `OrfPredictor` combines a 21-state frameshift-tolerant profile-HMM with Shine-Dalgarno RBS scoring and viral gap rescue, achieving **99.7% 3'-stop recall** on bacterial chromosomes and **95.3% recall** across embedded prophages at **>65 Mb/s**.
 
--   :lucide-git-fork: **Neuro-Symbolic Glycan Biosynthesis (`KBank`)**
+-   :lucide-git-fork: **De Novo Glycan Structure Prediction (`KBank`)**
 
     ---
 
-    `KBank` pairs factorized 1D-CNN glycosyltransferase/polymerase classifiers (`BiosyntheticClassifierSuite`) with a 2-layer Relational MPNN and a branch-and-bound Constrained Spanning Arborescence solver (`GlycanPredictor`) to reconstruct complete repeating-unit topologies *de novo*.
+    `KBank` pairs factorized 1D-CNN glycosyltransferase/polymerase classifiers (`BiosyntheticClassifierSuite`) with a Relational MPNN and a branch-and-bound Constrained Spanning Arborescence solver (`GlycanPredictor`) to reconstruct complete repeating-unit topologies *de novo*.
 
 -   :lucide-network: **Bipartite Gene-to-Glycan Alignment (`KBank`)**
 
     ---
 
-    `BiosyntheticAligner` maps individual glycosyltransferases, acetyltransferases, and `Wzy`/`Wzx` flippases onto specific monosaccharide linkages using pan-graph Expectation-Maximization homology priors and biological Und-PP reducing-end frame rotation.
+    `BiosyntheticAssigner` maps individual glycosyltransferases, acetyltransferases, and `Wzy`/`Wzx` flippases onto specific monosaccharide linkages using pan-graph Expectation-Maximization homology priors and biological Und-PP reducing-end frame rotation.
 
 -   :lucide-chart-bar-stacked: **Hierarchical Partial Pooling (`SeroEpi`)**
 
@@ -224,7 +231,10 @@ flowchart LR
 === "1. SeroGen — De Novo Locus & Serotype Calling"
 
     ```python
-    from serogen import GenomeAssembly, LocusDatabase, LocusMatcher, LocusPredictor
+    from serogen.core.io.fasta import GenomeAssembly
+    from serogen.loci.matcher import LocusMatcher
+    from serogen.loci.models import LocusDatabase
+    from serogen.loci.predictor import LocusPredictor
 
     # 1. Load a bacterial genome assembly (single or fragmented multi-contig FASTA)
     assembly = GenomeAssembly.from_fasta("klebsiella_isolate.fasta")
@@ -243,15 +253,17 @@ flowchart LR
     print(f"Serotype: {best.serotype} (score={best.score:.3f}, AA identity={best.mean_aa_identity:.1%})")
     ```
 
-=== "2. KBank — Neuro-Symbolic Glycan Prediction"
+=== "2. KBank — De Novo Glycan Structure Prediction"
 
     ```python
-    from kbank import BiosyntheticAligner, GlycanPredictor, IUPACParser
-    from kbank.db import Records
-    from serogen import GenomeAssembly, LocusPredictor
+    from kbank.biosynthesis.align import BiosyntheticAssigner
+    from kbank.biosynthesis.predictor import GlycanPredictor
+    from kbank.db.records import GlycanRecords
+    from serogen.core.io.fasta import GenomeAssembly
+    from serogen.loci.predictor import LocusPredictor
 
-    # 1. Load the 1,514 curated bacterial glycan + biosynthetic gene cluster records
-    records = Records.load()
+    # 1. Load the 1,530 curated bacterial glycan + biosynthetic gene cluster records
+    records = GlycanRecords.load()
 
     # 2. Segment a capsular polysaccharide locus from raw assembly DNA via SeroGen
     assembly = GenomeAssembly.from_fasta("KL106.fasta")
@@ -263,8 +275,8 @@ flowchart LR
     print(f"Predicted CSDB structure: {top_hit.glycan.to_csdb().decode()} (p={top_hit.probability:.2%})")
 
     # 4. Or align a locus directly to a known IUPAC/CSDB glycan to assign enzyme-to-linkage roles
-    aligner = BiosyntheticAligner.from_records(records)
-    assignment = aligner.align(locus, top_hit.glycan)
+    assigner = BiosyntheticAssigner()
+    assignment = assigner.assign_record(top_hit.glycan, locus)
     ```
 
 === "3. SeroEpi — Bayesian Prevalence & Vaccine Design"
@@ -297,7 +309,7 @@ flowchart LR
 | **SeroGen** | [Prophage & Bacterial ORF Benchmark](https://seroverse.github.io/SeroGen/notebooks/prophage-orfs/) | Interactive 16:9 Marimo slide deck benchmarking `OrfPredictor` across complete *K. pneumoniae* chromosomes (**99.7% 3'-stop recall**) and prophages (**95.3% recall**). |
 | **SeroGen** | [Multi-Scale 1D-CNN Role Classifier](https://seroverse.github.io/SeroGen/notebooks/gene-classifier/) | Optuna TPE hyperparameter tuning and confusion matrices across 30 polysaccharide biosynthesis, transport, and MGE roles (**91.4% Macro F1**). |
 | **SeroGen** | [*S. pneumoniae* 98-Serotype CPS Benchmark](https://seroverse.github.io/SeroGen/notebooks/spneumo-serotyping/) | Whole-genome serotyping (**100% Top-1 accuracy**), contig-split boundary stitching, LOO novelty detection, and Fruchterman-Reingold synteny networks. |
-| **KBank** | [CSDB Curation & BGC-to-Glycan Alignment](https://seroverse.github.io/KBank/notebooks/) | Curation of **1,514** bacterial surface polysaccharide structures, pan-graph EM glycosyltransferase assignment, and MPNN *de novo* structure recovery (`KL106`, `KL107`). |
+| **KBank** | [CSDB Curation & BGC-to-Glycan Alignment](https://seroverse.github.io/KBank/notebooks/) | Curation of **1,530** bacterial surface polysaccharide structures, pan-graph EM glycosyltransferase assignment, and MPNN *de novo* structure recovery (`KL106`, `KL107`). |
 | **SeroEpi** | [Live PyShiny Surveillance & Formulation App ↗](https://tomdstanton-seroepi.share.connect.posit.cloud) | Interactive cohort explorer, compositional antigen target builder, NUTS MCMC / SVI Bayesian prevalence fitting, spatial choropleths, UpSet plots, and vaccine coverage curves. |
 
 ---
